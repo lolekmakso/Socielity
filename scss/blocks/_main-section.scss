@@ -1,0 +1,92 @@
+.main-section {
+  text-align: center;
+  margin-top: 125px;
+  margin-bottom: 114px;
+
+  &__title {
+    letter-spacing: 0.02em;
+    @include text($ff, 700, 5.6rem, 7.8rem, $title);
+    margin-bottom: 38px;
+
+    span {
+      color: $blue;
+    }
+  }
+
+  &__desc {
+    max-width: 931px;
+    margin-inline: auto;
+    @include text($ff, 400, 1.6rem, 2.4rem, $text);
+    margin-bottom: 38px;
+  }
+
+  &__btn{
+    max-width: 172px;
+    margin-inline: auto;
+    margin-bottom: 21px;
+    white-space: nowrap;
+  }
+
+  &__link{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 11px;
+
+    img{
+        transition: $transition;
+    }
+
+    span{
+        position: relative;
+        @include text($ff, 400, 1.4rem, 2.4rem, $text);
+        transition: $transition;
+        
+
+        &::after {
+            content: '';
+            position: absolute;
+            right: 0;
+            left: 0;
+            bottom: 1px;
+            width: 100%;
+            border-bottom: 1px solid #CACACA;
+            transition: $transition;
+        }
+    }
+
+    &:hover{
+         img{
+            transform: scale(1.1);
+         }
+
+         span{
+            color: #eb5757;
+         }
+
+         span::after{
+            border-bottom:1px solid #eb5757;
+         }
+    }
+  }
+}
+
+@include desktop-small{
+    .main-section__title{
+        max-width: 750px;
+        margin-inline: auto;
+        @include text($ff, 700, 3.6rem, 5.8rem, $title);
+    }
+}
+
+@include tablet-small{
+    .main-section {
+        margin-top: 80px;
+    }
+}
+
+@include mobile{
+    .main-section__title{
+        @include text($ff, 700, 2.6rem, 3.4rem, $title);
+    }
+}

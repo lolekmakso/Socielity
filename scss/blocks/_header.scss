@@ -1,0 +1,179 @@
+.header {
+  display: flex;
+  align-items: center;
+  column-gap: 34px;
+  padding-top: 24px;
+
+
+  &__logo {
+    @include text($ff, 700, 3.6rem, 4.8rem, $blue);
+    position: relative;
+    z-index: 2;
+  }
+
+  &__menu {
+    flex: 1 1 auto;
+  }
+
+  &__btn {
+    position: relative;
+    z-index: 2;
+    // flex: 0 0 auto;
+  }
+}
+
+.theme{
+  background-color: rgb(213, 231, 231);
+  padding: 3px;
+  border-radius: 5px;
+  position: relative;
+  z-index: 2;
+}
+
+.menu {
+  &__list {
+    display: flex;
+    justify-content: flex-end;
+    gap: 40px;
+  }
+
+  &__item{
+    transition: $transition;
+
+    &:hover{
+      transform: scale(1.2);
+    }
+  }
+
+  &__link {
+    @include text($ff, 500, 1.6rem, 2.4rem, $text);
+
+  }
+}
+
+.icon-menu {
+  display: none;
+}
+
+@include tablet {
+  .header {
+    column-gap: 20px;
+  }
+
+  .menu__list {
+    gap: 17px;
+  }
+
+  .header__btn {
+    padding: 13px 15px;
+  }
+}
+
+@include tablet-small {
+  .icon-menu {
+    display: block;
+    border: none;
+    background: $white;
+    flex: 0 0 30px;
+    height: 18px;
+    position: relative;
+    z-index: 5;
+
+    span,
+    &::before,
+    &::after {
+      content: "";
+      right: 0;
+      position: absolute;
+      width: 100%;
+      height: 2px;
+      background-color: $black;
+	  transition: $transition;
+    }
+
+    &::before {
+      top: 0;
+    }
+
+    &::after {
+      bottom: 0;
+    }
+
+    span {
+      top: calc(50% - 1px);
+    }
+  }
+
+  .menu-open .icon-menu span{
+	width: 0;
+  }
+
+  .menu-open .icon-menu::before{
+	top: calc(50% - 1px);
+	transform: rotate(-45deg);
+  }
+
+  .menu-open .icon-menu::after{
+	bottom: calc(50% - 1px);
+	transform: rotate(45deg);
+  }
+
+  .menu__body {
+    z-index: 1;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: $white;
+    left: -100%;
+    top: 0;
+    padding: 130px 15px 30px 15px;
+    overflow: auto;
+	transition: $transition;
+
+    
+  }
+
+  .menu__list {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+  }
+
+  .menu__link {
+    font-size: 22px;
+  }
+
+  .menu-open .menu__body,
+  .menu-open .menu__body::before{
+	left: 0;
+  }
+}
+
+@include mobile {
+  .header {
+    column-gap: 10px;
+
+    &__logo {
+      @include text($ff, 700, 2.6rem, 3.8rem, $blue);
+    }
+
+    &__btn {
+      padding: 8px 12px;
+
+      span {
+        display: none;
+      }
+    }
+  }
+}
+
+.themetoggle{
+  position: relative;
+  z-index: 2;
+}
+
+.themetoggle span{
+  color: $black;
+  font-size: 3rem;
+}

@@ -1,0 +1,64 @@
+svg {
+  display: none;
+}
+
+.subsctibe-section__desc {
+  max-width: 770px;
+  margin-inline: auto;
+  margin-bottom: 44px;
+}
+
+.subscribe-section__subscribe {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 15px 20px 15px 35px;
+  background: #e6e6e6;
+  border-radius: 16px;
+  max-width: 770px;
+  height: 80px;
+  margin-inline: auto;
+  margin-bottom: 80px;
+
+  input {
+    width: 100%;
+    background: #e6e6e6;
+    border: 0;
+    outline: 0;
+    @include text($ff, 400, 2rem, 2.8rem, $text);
+  }
+
+  a {
+    white-space: nowrap;
+  }
+}
+
+@include mobile {
+  .subsctibe-section {
+    svg {
+      display: inline;
+    }
+
+    span {
+      display: none;
+    }
+
+    &__btn {
+      padding: 14px 20px 13px;
+      transition: $transition;
+
+      &:hover{
+        background: rgb(44, 147, 232);
+        border: 1px solid rgb(44, 147, 232);
+      }
+    }
+  }
+
+  .subscribe-section__subscribe {
+    padding: 15px;
+
+    input {
+        @include text($ff, 400, 1.4rem, 2rem, $text);
+      }
+  }
+}

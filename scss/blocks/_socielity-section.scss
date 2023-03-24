@@ -1,0 +1,54 @@
+.socielity-section{
+    margin-bottom: 100px;
+
+    &__desc{
+        max-width: 743px;
+        margin-inline: auto;
+    }
+}
+
+
+.socielity-list {
+  display: grid;
+  gap: 30px;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  margin-top: 51px;
+
+  @include tablet{
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+
+    .socielity-list__item {
+        max-width: 430px;
+      }
+
+  }
+
+  @include mobile{
+    grid-template-columns: 1fr;
+  }
+
+  &__item {
+    max-width: 270px;
+    text-align: center;
+    background: #f6f7fd;
+    border-radius: 8px;
+    padding: 25px 15px 15px;
+    transition: $transition;
+
+    &:hover {
+        transform: scale(1.05);
+        background: #eaebf1;
+      }
+  }
+
+  &__title {
+    @include text($ff, 700, 2rem, 2.8rem, $title);
+    margin-top: 15px;
+    margin-bottom: 12px;
+  }
+
+  &__desc {
+    @include text($ff, 400, 1.6rem, 2.4rem, $text);
+  }
+}

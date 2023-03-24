@@ -1,0 +1,55 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 10px;
+}
+
+body {
+  font-family: $ff;
+  transition: $transition;
+}
+
+.container {
+  padding: 0 20px;
+  max-width: $container;
+  margin-inline: auto;
+}
+
+.btn {
+  display: inline-block;
+  outline: 0;
+  border: 1px solid transparent;
+  cursor: pointer;
+  text-align: center;
+  background: $blue;
+  border-radius: 8px;
+  padding: 13px 34px;
+  @include text($ff, 500, 1.6rem, 2.4rem, $white);
+  transition: $transition;
+
+  &:hover {
+    color: $blue;
+    background: $white;
+    border: 1px solid $blue;
+  }
+}
+.material-icons {
+  cursor: pointer;
+}
+
+.title {
+    margin-bottom: 20px;
+  text-align: center;
+  @include text($ff, 700, 2.6rem, 4.8rem, $title);
+}
+
+.desc {
+  text-align: center;
+  @include text($ff, 500, 1.6rem, 2.4rem, $text);
+}
+
+

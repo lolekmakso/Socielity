@@ -1,0 +1,48 @@
+.companies-section{
+    padding: 0 20px;
+    margin-bottom: 157px;
+
+    &__desc{
+        max-width: 985px;
+        margin-inline: auto;
+        margin-bottom: 46px;
+     }
+
+     &__img{
+        max-width: 1400px;
+        margin-inline: auto;
+        display: grid;
+        justify-items: center;
+        gap: 60px;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+
+        a{
+            transition: $transition;
+
+            &:hover{
+                transform: scale(1.1);
+            }
+        }
+
+        @include desktop-small{
+         gap: 30px;
+        }
+
+        @include tablet{
+            grid-template-columns: 1fr 1fr 1fr;
+        }
+
+        @include mobile{
+            grid-template-columns: 1fr 1fr;
+            column-gap: 1px;
+        }
+
+        @media screen and (max-width: 360px){
+            grid-template-columns: 1fr;
+        }
+     }
+
+
+}
+
+
